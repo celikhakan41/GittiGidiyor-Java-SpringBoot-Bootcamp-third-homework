@@ -1,0 +1,29 @@
+<form action="#" th:action="@{/signup}" th:object="${form}"
+      method="post" xmlns="http://www.w3.org/1999/html">
+    <fieldset>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Birthday</th>
+                <th>Address</th>
+                <th>Gender</th>
+                <th>Courses</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="student : ${students}">
+                <td th:text="${student.name}">Name</td>
+                <td th:text="${{student.birthday}}">Birthday</td>
+                <td th:text="${student.address}">Address</td>
+                <td th:text="${student.gender}">Gender</td>
+                <td th:each="courseList : ${student.courseList}">
+                        <span th:text="${courseList.name}"></span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </fieldset>
+    <p><a href="/signup">Add a new user</a></p>
+</form>

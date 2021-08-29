@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Spring Boot Thymeleaf Application - Bootstrap Input Mask</title>
+
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 mt-5">
+            <form action="#" th:action="@{/addstudent}" th:object="${student}" method="post">
+                <p>
+                    <label>Email: </label>
+                    <strong th:text="${student.name}"></strong>
+                </p>
+
+                <p>
+                    <label>Time (12h): </label>
+                    <strong th:text="${{student.birthday}}"></strong>
+                </p>
+
+                <p>
+                    <label>Time (24h): </label>
+                    <strong th:text="${student.address}"></strong>
+                </p>
+
+                <p>
+                    <label>Currency: </label>
+                    <strong th:text="${student.gender}"></strong>
+                </p>
+            </form>
+
+        </div>
+    </div>
+
+    <a th:href="@{/}" class="btn btn-primary">Go back</a>
+</div>
+
+</body>
+</html>
